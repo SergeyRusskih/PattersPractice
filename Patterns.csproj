@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8B5B2B0-CDC6-4DE6-B83D-45CFB4B3ECC2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Patterns</RootNamespace>
+    <AssemblyName>Patterns</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BehaviouralPatterns\ChainOfResponsibility\ConcreteHander1.cs" />
+    <Compile Include="BehaviouralPatterns\ChainOfResponsibility\ConcreteHandler2.cs" />
+    <Compile Include="BehaviouralPatterns\ChainOfResponsibility\Handler.cs" />
+    <Compile Include="BehaviouralPatterns\ChainOfResponsibility\PrintButton.cs" />
+    <Compile Include="BehaviouralPatterns\Command\Command.cs" />
+    <Compile Include="BehaviouralPatterns\Command\ConcreteCommand.cs" />
+    <Compile Include="BehaviouralPatterns\Command\Invoker.cs" />
+    <Compile Include="BehaviouralPatterns\Command\Receiver.cs" />
+    <Compile Include="BehaviouralPatterns\Interpreter\AbstrcatExpression.cs" />
+    <Compile Include="BehaviouralPatterns\Interpreter\Context.cs" />
+    <Compile Include="BehaviouralPatterns\Interpreter\NonterminalExpression.cs" />
+    <Compile Include="BehaviouralPatterns\Interpreter\TerminalExpression.cs" />
+    <Compile Include="GeneratingPatterns\AbstractFactory\ConcreteFactories\LinuxFactory.cs" />
+    <Compile Include="GeneratingPatterns\AbstractFactory\ConcreteFactories\WindowsFactory.cs" />
+    <Compile Include="GeneratingPatterns\AbstractFactory\Factory.cs" />
+    <Compile Include="GeneratingPatterns\AbstractFactory\IFactory.cs" />
+    <Compile Include="GeneratingPatterns\Builder\ConcreteBuilders\Builder1.cs" />
+    <Compile Include="GeneratingPatterns\Builder\ConcreteBuilders\Builder2.cs" />
+    <Compile Include="GeneratingPatterns\Builder\Director.cs" />
+    <Compile Include="GeneratingPatterns\Builder\IBuilder.cs" />
+    <Compile Include="GeneratingPatterns\Builder\IProduct.cs" />
+    <Compile Include="GeneratingPatterns\FactoryMethod\Application.cs" />
+    <Compile Include="GeneratingPatterns\FactoryMethod\Document.cs" />
+    <Compile Include="GeneratingPatterns\FactoryMethod\Drawing\DrawingApplication.cs" />
+    <Compile Include="GeneratingPatterns\FactoryMethod\Drawing\DrawingDocument.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GeneratingPatterns\Prototype\ConcretePrototype1.cs" />
+    <Compile Include="GeneratingPatterns\Prototype\ConcretePrototype2.cs" />
+    <Compile Include="GeneratingPatterns\Prototype\Prototype.cs" />
+    <Compile Include="GeneratingPatterns\Singleton\Singleton.cs" />
+    <Compile Include="StructuralPatterns\Adapter\ITargetAdapter.cs" />
+    <Compile Include="StructuralPatterns\Adapter\MyAdapter.cs" />
+    <Compile Include="StructuralPatterns\Adapter\OriginalClass.cs" />
+    <Compile Include="StructuralPatterns\Bridge\Abstr\Abstraction.cs" />
+    <Compile Include="StructuralPatterns\Bridge\Imp\ConcreteImplementorA.cs" />
+    <Compile Include="StructuralPatterns\Bridge\Imp\ConcreteImplementorB .cs" />
+    <Compile Include="StructuralPatterns\Bridge\Imp\Implementator.cs" />
+    <Compile Include="StructuralPatterns\Bridge\Abstr\RefinedAbstraction .cs" />
+    <Compile Include="StructuralPatterns\Composite\Graphic.cs" />
+    <Compile Include="StructuralPatterns\Composite\Line.cs" />
+    <Compile Include="StructuralPatterns\Composite\Picture.cs" />
+    <Compile Include="StructuralPatterns\Decorator\Worker.cs" />
+    <Compile Include="StructuralPatterns\Decorator\IWorker.cs" />
+    <Compile Include="StructuralPatterns\Decorator\LoggedWorker.cs" />
+    <Compile Include="StructuralPatterns\Facade\BytecodeStream.cs" />
+    <Compile Include="StructuralPatterns\Facade\Compiler.cs" />
+    <Compile Include="StructuralPatterns\Facade\Parser.cs" />
+    <Compile Include="StructuralPatterns\Facade\Scanner.cs" />
+    <Compile Include="StructuralPatterns\Flyweight\GlyphFactory.cs" />
+    <Compile Include="StructuralPatterns\Flyweight\IGlyph.cs" />
+    <Compile Include="StructuralPatterns\Flyweight\Row.cs" />
+    <Compile Include="StructuralPatterns\Flyweight\Symbol.cs" />
+    <Compile Include="StructuralPatterns\Proxy\IImage.cs" />
+    <Compile Include="StructuralPatterns\Proxy\ImageProxy.cs" />
+    <Compile Include="StructuralPatterns\Proxy\Image.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

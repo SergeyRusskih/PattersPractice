@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace Patterns.BehaviouralPatterns.Command
+{
+    public class Receiver
+    {
+        public void Action()
+        {
+            Console.WriteLine("Called Receiver.Action()");
+        }
+    }
+}
