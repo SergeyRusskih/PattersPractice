@@ -48,6 +48,43 @@ namespace Patterns
 
             experssion1.Interpret(context);
             expression2.Interpret(context);
+
+            // Mediator
+            ConcreteMediator m = new ConcreteMediator();
+ 
+            ConcreteColleague1 c1 = new ConcreteColleague1(m);
+            ConcreteColleague2 c2 = new ConcreteColleague2(m);
+        
+            m.Colleague1 = c1;
+            m.Colleague2 = c2;
+        
+            c1.Send("How are you?");
+            c2.Send("Fine, thanks");
+
+            // Memoto
+            Originator o = new Originator();
+            o.State = "On";
+        
+            // Store internal state
+            Caretaker c = new Caretaker();
+            c.Memento = o.CreateMemento();
+        
+            // Continue changing originator
+            o.State = "Off";
+        
+            // Restore saved state
+            o.SetMemento(c.Memento);
+
+            // Observer
+            ConcreteSubject s = new ConcreteSubject();
+ 
+            s.Attach(new ConcreteObserver(s, "X"));
+            s.Attach(new ConcreteObserver(s, "Y"));
+            s.Attach(new ConcreteObserver(s, "Z"));
+ 
+            // Change subject and notify observers
+            s.SubjectState = "ABC";
+            s.Notify();
         }
     }
 }
