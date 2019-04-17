@@ -1,5 +1,6 @@
 ﻿using Patterns.BehaviouralPatterns.Command;
 using Patterns.BehaviouralPatterns.Interpreter;
+using Patterns.BehaviouralPatterns.Mediator;
 using Patterns.GeneratingPatterns.AbstractFactory;
 using Patterns.GeneratingPatterns.AbstractFactory.ConcreteFactories;
 using Patterns.GeneratingPatterns.Builder;
@@ -19,7 +20,7 @@ namespace Patterns
             var obj1 = concreteFactory.CreateCloneable();
             var obj2 = concreteFactory.CreateComparable();
 
-            // Builder 
+            // Builder
             IBuilder builder = new Builder1();
             var director = new Director(builder);
             var product = director.Construct<IProduct>();
@@ -32,7 +33,7 @@ namespace Patterns
             Prototype prototype = new ConcretePrototype1();
             Prototype newObject = prototype.Clone();
 
-            // Command 
+            // Command
             Receiver receiver = new Receiver();
             Command command = new ConcreteCommand(receiver);
             Invoker invoker = new Invoker();
@@ -40,7 +41,7 @@ namespace Patterns
             invoker.SetCommand(command);
             invoker.ExecuteCommand();
 
-            // Interpreter 
+            // Interpreter
             var context = new Context();
 
             AbstrcatExpression experssion1 = new NonterminalExpression();
@@ -51,37 +52,37 @@ namespace Patterns
 
             // Mediator
             ConcreteMediator m = new ConcreteMediator();
- 
+
             ConcreteColleague1 c1 = new ConcreteColleague1(m);
             ConcreteColleague2 c2 = new ConcreteColleague2(m);
-        
+
             m.Colleague1 = c1;
             m.Colleague2 = c2;
-        
+
             c1.Send("How are you?");
             c2.Send("Fine, thanks");
 
             // Memoto
             Originator o = new Originator();
             o.State = "On";
-        
+
             // Store internal state
             Caretaker c = new Caretaker();
             c.Memento = o.CreateMemento();
-        
+
             // Continue changing originator
             o.State = "Off";
-        
+
             // Restore saved state
             o.SetMemento(c.Memento);
 
             // Observer
             ConcreteSubject s = new ConcreteSubject();
- 
+
             s.Attach(new ConcreteObserver(s, "X"));
             s.Attach(new ConcreteObserver(s, "Y"));
             s.Attach(new ConcreteObserver(s, "Z"));
- 
+
             // Change subject and notify observers
             s.SubjectState = "ABC";
             s.Notify();

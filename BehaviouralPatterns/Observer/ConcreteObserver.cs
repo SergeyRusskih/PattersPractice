@@ -1,4 +1,6 @@
-  class ConcreteObserver : Observer
+  using System;
+
+class ConcreteObserver : Observer
   {
     private string _name;
     private string _observerState;
